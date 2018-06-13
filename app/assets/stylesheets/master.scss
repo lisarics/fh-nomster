@@ -1,5 +1,8 @@
 @import "bootstrap";
 
+
+
+
 .booyah-box {
   -moz-box-shadow: 1px 1px 2px 0 #d0d0d0;
   -webkit-box-shadow: 1px 1px 2px 0 #d0d0d0;
@@ -28,4 +31,12 @@ font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill
 .navbar {
   background: image_url('food.png');
   box-shadow: 0px 1px 3px #2a2a2a;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #FA0286;
+  font-family: 'league_spartanbold', sans-serif;
+  font-size: 48px;
+ 
+ 
 }
