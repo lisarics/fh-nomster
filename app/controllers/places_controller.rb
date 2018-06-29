@@ -38,7 +38,11 @@ end
   end
   
     @place.update_attributes(place_params)
+    if @place.valid?
     redirect_to root_path
+  else
+    render :edit, status: :unprocessable_entity
+  end
   end
 
   def destroy
