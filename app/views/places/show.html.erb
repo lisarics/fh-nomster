@@ -94,8 +94,6 @@
 </div>
 <div class="clear"></div>
 
-
-
 <div class="row">
 <% @place.comments.each do |comment| %>
 <div class="col-12 col-sm-6">
@@ -109,10 +107,6 @@
 </div>
 <% end %>
 
-
-
-
-
 <!-- Photo Modal -->
 <div class="modal fade" id="photoModal" tabindex="-1" role="dialog" aria-labelledby="photoModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -121,15 +115,13 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
-        <h4 class="modal-title" id="photoModalLabel">Add a picture</h4>
+        <h4 class="modal-title" id="photoModalLabel">Add your photo</h4>
       </div>
      
         <%= simple_form_for @photo, :url => place_photos_path(@place) do |f| %>
            <div class="modal-body">
           <%= f.input :caption %>
           <%= f.input :picture %>
-          
-
 
       </div>
       <div class="modal-footer">
@@ -141,37 +133,27 @@
     </div>
   </div>
 </div>
-
-<div class="clear"></div>
-<div class="col-10 offset-1">
-
-<h1 class="float-left">Photos</h1>
-<br /><br />
-<div class="clear"></div>
-
-
+    
+     
+  <div class="clear"></div>
 
 </div>
-</div>
+ <div class="col-10 offset-1">
 
-  
-
-
-<div class="row">
-
+  <h1 class="float-left">Photos</h1><br /><br />
+  </div>
+  <div class="clear"></div>
 <% @place.photos.each do |photos| %>
 <div class="col-10 offset-1">
 
   <%= image_tag photos.picture %>
     <blockquote>
-          <%= photos.caption %>
-          
+          <%= photos.caption %>         
   </blockquote>
-
+  <hr>
 </div>
 </div>
-
- <% end %>
+<% end %>
 
 
 
