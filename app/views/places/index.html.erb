@@ -2,14 +2,22 @@
   <div class="booyah-box col-10 offset-1">
     <h1><%= link_to place.name, place_path(place) %></h1><br />
     <i><%= place.address %></i><br /><br />
-    <p><%= place.description %></p><br />
+    <p><%= place.description %> submitted by: 
 
-    <% if place.user.present? %>
+       <% if place.user.present? %>
     <small><%= place.user.email %></small>
    <% end %>
+ </p>
+   <div class="clear">
+  
+<% if place.photos.present? && place.photos.last.picture.present?  %>
+      <%= image_tag place.photos.last.picture, :class => "col-xs-12 col-sm-6 col-md-3" %>
+    <% end %>
+
+ 
 
     <% if place.comments.present? %>
-       <div class="col-12">
+       <div class="col-10">
   <blockquote>
     <% if place.comments.last.humanized_rating.present? %>
       <b><%= place.comments.last.humanized_rating %></b> -
@@ -19,8 +27,10 @@
   </blockquote>
 </div>
   <% end %>
+
 </div>
   </div>
  <% end %>
+
 
  
